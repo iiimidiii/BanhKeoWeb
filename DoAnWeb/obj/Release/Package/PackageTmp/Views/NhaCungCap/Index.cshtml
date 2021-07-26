@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DoAnWeb.Models.Nhasanxuat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1> THÔNG TIN NHÀ CUNG CẤP</h1>
+    <p>
+        @Html.ActionLink("THÊM NHÀ CUNG CẤP MỚI", "Create")
+    </p>
+    <table class="table", border="1" >
+        <tr>
+            <th style="width:250px">TÊN NHÀ CUNG CẤP </th>
+            <th style="width:200px">ĐỊA CHỈ </th>
+            <th style="width:300px">SỐ ĐIỆN THOẠI</th>
+            <th style="width:300px">CÔNG CỤ</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tennsx)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sdt)
+                </td>
+                <td>
+                    @Html.ActionLink("CHỈNH SỬA", "Edit", new { id = item.manhasx }) |
+                    @Html.ActionLink("THÔNG TIN", "Details", new { id = item.manhasx }) |
+                    @Html.ActionLink("XÓA", "Delete", new { id = item.manhasx })
+                </td>
+            </tr>
+        }
+
+    </table>
+

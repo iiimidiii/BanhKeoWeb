@@ -1,0 +1,12 @@
+﻿@model IEnumerable<DoAnWeb.Models.Nhasanxuat>
+<p class="lead">CÁC NHÀ SẢN XUẤT</p>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheoNhaSanXuat","BanhKeo",new { id= item.manhasx})"
+           class="list-group-item">
+            @item.Tennsx
+        </a>
+
+    }
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<DoAnWeb.Models.Chitietdonhang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CÁC SẢN PHẨM ĐÃ BÁN</h2>
+
+
+<table class="table", border="1">
+    <tr>
+        <th style="width:250px">TÊN SẢN PHẨM </th>
+        <th style="width:200px">SỐ LƯỢNG </th>
+        <th style="width:300px">ĐƠN GIÁ</th>
+        <th style="width:200px">MÃ ĐON HÀNG</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.SanPham.tensanpham)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.soluong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dongia)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Madonhang)
+    </td>
+</tr>
+}
+
+</table>

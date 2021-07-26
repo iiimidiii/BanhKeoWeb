@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Live Dinner Restaurant - Responsive HTML5 Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="~/image/x-icon">
+    <link rel="apple-touch-icon" href="~/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="~/Content/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Content/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="footer-area bg-f">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <h3>CHÚNG TÔI</h3>
+                        <p>SỰ HÀI LÒNG CỦA QUÝ VỊ LÀ HẠNH PHÚC CHO CHÚNG TÔI.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h3>THÔNG TIN LIÊN LẠC</h3>
+                        <p class="lead">SỐ 1 , QUẬN 1 TP HỒ CHÍ MINH</p>
+                        <p class="lead"><a href="#">9999999999</a></p>
+                        <p><a href="#"> thaiduong.080300@gmail.com</a></p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h3>THỜI GIAN MỞ CỬA</h3>
+                        <p><span class="text-color">THỨ 2-THỨ 7: </span> 7h Sáng - 17h Chiều</p>
+
+                        <p><span class="text-color">CHỦ NHẬT :</span> Nghỉ</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

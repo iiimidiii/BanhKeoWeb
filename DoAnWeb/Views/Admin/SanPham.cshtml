@@ -1,0 +1,85 @@
+﻿@using DoAnWeb.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnWeb.Models.SanPham>
+  @helper Truncate(string input, int length)
+      {
+      if(input.Length < length)
+          {
+             @input
+           }
+       else
+        {
+        @input.Substring(0,length)<text>..vv..</text>
+         }
+      }
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>TẤT CẢ SẢN PHẨM</h2>
+
+<p>
+    @Html.ActionLink("THÊM SẢN PHẨM MỚI", "CreateSanPham")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:180px">TÊN SẢN PHẨM </th>
+        <th style="width:100px">GIÁ </th>
+        <th style="width:300px">MÔ TẢ</th>
+        <th style="width:200px">ẢNH</th>
+        <th style="width:140px">NGÀY NHẬP </th>
+        <th style="width:120px">SỐ LƯỢNG</th>
+        <th style="width:120px">TÊN LOẠI HÀNG </th>
+        <th style="width:120px">TÊN NHÀ CUNG CẤP </th>
+        <th style="width:250px">CÔNG CỤ</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.tensanpham)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Giaban) VNĐ
+    </td>
+    <td>
+        @Html.Raw(item.mota)
+    </td>
+    <td>
+        <img src="@Url.Content("~/images/" + @item.Anh)" width="100%" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaynhaphang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.soluongconlai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoaiHang.tenloaihang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nhasanxuat.Tennsx)
+    </td>
+    <td>
+      
+
+        @Html.ActionLink("CHI TIẾT", "Details", new { id = item.Masp })|
+
+        @Html.ActionLink("XÓA", "Delete", new { id = item.Masp })
+    </td>
+</tr>
+    }
+
+
+</table>
+ Trang @(Model.PageCount < Model.PageNumber?0:Model.PageNumber)/@Model.PageCount;
+<div class="menuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page = page }))
+</div>
+<style>
+    .menuTrang li {
+        display: inline;
+    }
+</style>

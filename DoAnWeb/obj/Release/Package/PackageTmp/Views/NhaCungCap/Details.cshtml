@@ -1,0 +1,43 @@
+﻿@model DoAnWeb.Models.Nhasanxuat
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN</h2>
+
+<div>
+    <h4>Nhasanxuat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            TÊN NHÀ CUNG CẤP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tennsx)
+        </dd>
+
+        <dt>
+           ĐỊA CHỈ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diachi)
+        </dd>
+
+        <dt>
+           SỐ ĐIỆN THOẠI
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sdt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("CHỈNH SỬA", "Edit", new { id = Model.manhasx }) |
+    @Html.ActionLink("TRỞ LẠI", "Index")
+</p>

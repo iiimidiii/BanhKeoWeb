@@ -1,0 +1,83 @@
+﻿@model DoAnWeb.Models.SanPham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CHI TIẾT SẢN PHẨM</h2>
+
+<div>
+    <h4>SẢN PHẨM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            TÊN SẢN PHẨM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tensanpham)
+        </dd>
+
+        <dt>
+            GIÁ
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.Giaban) VNĐ
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mota)
+        </dd>
+
+        <dt>
+           ẢNH
+        </dt>
+
+        <dd>
+            <img src="~/images/@Model.Anh" width="25%"/>
+        </dd>
+
+        <dt>
+            NGÀY NHẬP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaynhaphang)
+        </dd>
+
+        <dt>
+            SỐ LƯỢNG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluongconlai)
+        </dd>
+
+        <dt>
+            NHÀ CUNG CẤP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhasanxuat.Tennsx)
+        </dd>
+
+        <dt>
+            LOẠI SẢN PHẨM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiHang.tenloaihang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("CHỈNH SỬA", "Edit", new { id = Model.Masp }) |
+    @Html.ActionLink("TRỞ LẠI", "")
+</p>

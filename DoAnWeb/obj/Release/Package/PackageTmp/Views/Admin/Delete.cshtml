@@ -1,0 +1,89 @@
+﻿@model DoAnWeb.Models.SanPham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>XÓA</h2>
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            TÊN SẢN PHẨM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tensanpham)
+        </dd>
+
+        <dt>
+            GIÁ BÁN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giaban)
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mota)
+        </dd>
+
+        <dt>
+          ẢNH
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>
+
+        <dt>
+            NGÀY NHẬP
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaynhaphang)
+        </dd>
+
+        <dt>
+            SỐ LƯỢNG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluongconlai)
+        </dd>
+
+        <dt>
+            NHÀ SẢN XUẤT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.manhasx)
+        </dd>
+
+        <dt>
+            LOẠI HÀNG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maloaihang)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="XÓA" class="btn btn-default" /> |
+            @Html.ActionLink("TRỞ LẠI", "Index")
+        </div>
+    }
+</div>

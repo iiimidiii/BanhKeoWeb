@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DoAnWeb.Models.KhachHang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>KHÁCH HÀNG</h2>
+
+<table class="table" , border="1">
+    <tr>
+
+        <th style="width:250px">TÊN KHÁCH HÀNG </th>
+        <th style="width:200px">TÀI KHOẢN </th>
+        <th style="width:300px">MẬT KHẨU</th>
+        <th style="width:200px">EMAIL</th>
+        <th style="width:140px">ĐỊA CHỈ</th>
+        <th style="width:200px">SỐ ĐIỆN THOẠI</th>
+        <th style="width:120px">NGÀY SINH </th>
+        <th style="width:200px">CÔNG CỤ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hoten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MatKhau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diachikh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sdt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaysinh)
+        </td>
+        <td>
+            @Html.ActionLink("CHỈNH SỬA", "Edit", new { id=item.MaKH })
+        </td>
+    </tr>
+}
+
+</table>

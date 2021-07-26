@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DoAnWeb.Models.Donhang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CÁC ĐƠN HÀNG</h2>
+
+
+<table class="table", border="1">
+    <tr>
+
+        <th style="width:250px">ĐÃ THANH TOÁN </th>
+        <th style="width:200px">TÌNH TRANG GIAO HÀNG </th>
+        <th style="width:300px">NGÀY ĐẶT</th>
+        <th style="width:200px">NGÀY GIAO</th>
+        <th style="width:140px">TÊN KHÁCH HÀNG</th>
+        <th style="width:200px">CÔNG CỤ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dathanhtoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tinhtranggiaohang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngaydat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngaygiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.Hoten)
+        </td>
+        <td>
+            @Html.ActionLink("CHỈNH SỬA", "Edit", new { id=item.Madonhang }) 
+        </td>
+    </tr>
+}
+
+</table>
